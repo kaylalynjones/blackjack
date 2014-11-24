@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('blackjack')
-    .controller('NavCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
+    .controller('NavCtrl', ['$scope', '$state', 'User', '$rootScope', function($scope, $state, User, $rootScope){
       $scope.$on('username', function(e, username){
         $scope.username = username;
         $scope.init = true;
@@ -15,7 +15,7 @@
 
       $scope.logout = function(){
         User.logout().then(function(){
-          $scope.username = null;
+          $rootScope.rootuser = null;
           toastr.success('User successfully logged out.');
           $state.go('home');
         });
