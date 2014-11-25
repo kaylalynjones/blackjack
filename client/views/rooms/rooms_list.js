@@ -44,7 +44,7 @@
             };
 
             socket.on('bGlobalChat', function(message){
-                $('#messages').append('<div class="chat" ><img class="chat-avatar", src="'+ message.avatar +'"/>' + message.body + '</div><hr />');
+                $('#messages').append('<div class="chat" ><img class="chat-avatar", ng-src="'+ message.avatar +'"/>' + message.body + '</div><hr />');
                 $('#chat').focus();
             });
 
