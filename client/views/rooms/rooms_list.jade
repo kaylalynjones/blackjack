@@ -2,25 +2,32 @@ h2 Rooms
 
 .row
    .small-6.columns
-      .row
+
+      .small-12.columns
+         h3 Create a Room
          .small-12.columns
-            h3 Create a Room
-            .small-9.columns
-               input.radius(type='text', ng-model='')
-            .small-3.columns
-               button.radius.tiny(ng-click='') Add
+            input.radius(type='text', ng-model='room.name', placeholder='Room Name')
+            input.radius(type='password', ng-model='room.password', placeholder='Password')
+            button.radius.tiny(ng-click='createRoom()') Create
 
       .row
          .small-12.columns
             h3 Room List
-            ul
-               li Room 1
-               li Room 2
+            table
+               thead
+                  th Owner
+                  th Name
+                  th Password
+                  th
+               tbody
+                  td
+                  td
+                  td
+                  td: button.tiny Join
 
    .small-6.columns
       h3 Chat
       #messages.panel.callout.radius
-      .small-9.columns
-         input.radius(type='text', ng-model='message', autofocus)
-      .small-3.columns
-         button.radius.small(ng-click='chat(message)') Send
+      input#message(type='text', ng-model='message', autofocus)
+      button.success.tiny.radius(ng-click='chat(message)') Send Message
+
