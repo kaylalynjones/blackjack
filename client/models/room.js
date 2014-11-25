@@ -8,6 +8,10 @@
                 return $http.post('/room/create', room);
             }
 
-            return {create:create};
+            function showAll(){
+                return $http.get('/room/index');
+            }
+
+            return {create:create, showAll:showAll};
         }]);
 })();

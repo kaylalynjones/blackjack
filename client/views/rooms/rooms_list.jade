@@ -6,8 +6,8 @@ h2 Rooms
       .small-12.columns
          h3 Create a Room
          .small-12.columns
-            input.radius(type='text', ng-model='room.name', placeholder='Room Name')
-            input.radius(type='password', ng-model='room.password', placeholder='Password')
+            input.radius(type='text', ng-model='room.name', placeholder='Room Name', ng-class='{error: error}')
+            input.radius(type='password', ng-model='room.password', placeholder='Password', ng-class='{error: error}')
             button.radius.tiny(ng-click='createRoom()') Create
 
       .row
@@ -19,11 +19,11 @@ h2 Rooms
                   th Name
                   th Password
                   th
-               tbody
-                  td
-                  td
-                  td
-                  td: button.tiny Join
+               tbody(ng-repeat='room in rooms | orderBy: "createdAt": true')
+                  td: img.table-avatar(ng-src= '{{room.creator.avatar}}')
+                  td {{room.name}}
+                  td: input.radius(type='password', placeholder='Password', ng-model='password')
+                  td: button.tiny.radius.alert(ng-click='join(room)') Join
 
    .small-6.columns
       h3 Chat

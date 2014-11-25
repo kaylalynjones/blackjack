@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 
 RoomSchema = new mongoose.Schema({
     name: {type: String, required: true, validate: [nameV, 'name length'], unique: true},
-    password: {type: String, required: true, validate: [passwordV, 'passowrd length']},
+    password: {type: String, required: true, validate: [passwordV, 'password length']},
     creator: {type: mongoose.Schema.Types.ObjectId, ref:'User', required: true},
     createdAt: {type: Date, required: true, default: Date.now}
 });
