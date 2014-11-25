@@ -1,10 +1,14 @@
 h2 Rooms
 
 .row
-   .small-8.columns
+   .small-6.columns
       .row
          .small-12.columns
             h3 Create a Room
+            .small-9.columns
+               input.radius(type='text', ng-model='')
+            .small-3.columns
+               button.radius.tiny(ng-click='') Add
 
       .row
          .small-12.columns
@@ -13,8 +17,10 @@ h2 Rooms
                li Room 1
                li Room 2
 
-   .small-4.columns
+   .small-6.columns
       h3 Chat
       #messages.panel.callout.radius
-      input(type='text', ng-model='message')
-      button.send.tiny.radius(ng-click='chat(message)') Send
+      .small-9.columns
+         input.radius(type='text', ng-model='message', autofocus)
+      .small-3.columns
+         button.radius.small(ng-click='chat(message)') Send

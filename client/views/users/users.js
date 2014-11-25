@@ -19,7 +19,7 @@
           User.login($scope.user).then(function(response){
             $rootScope.$broadcast('username', $scope.user.username);
             toastr.success('User successfully authenticated.');
-            $state.go('home');
+            $state.go('rooms.list');
           }, function(){
             toastr.error('Error during authentication.');
             $scope.user = {};
