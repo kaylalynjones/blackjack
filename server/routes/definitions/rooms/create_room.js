@@ -18,5 +18,8 @@ module.exports = {
         room.save(function(err){
             reply(room).code(err ? 400 : 200);
         });
+        //room.save(function(err){
+        //    reply({name:room.name, avatar:request.auth.credentials.avatar, createdAt:room.createdAt}).code(err ? 401 : 200);
+        //});
     }
 };

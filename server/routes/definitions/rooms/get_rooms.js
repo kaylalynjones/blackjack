@@ -9,6 +9,10 @@ module.exports = {
     handler: function(request, reply){
         Room.find(function(err, rooms){
             reply(rooms);
+            //rooms = rooms.map(function(room){
+            //    return {name: room.name, avatar: room.creator.avatar, createdAt: room.createdAt};
+            //});
+            //reply({rooms:rooms});
         }).populate('creator');
     }
 };

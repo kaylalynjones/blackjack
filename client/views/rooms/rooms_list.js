@@ -34,6 +34,15 @@
                 $scope.message = '';
             };
 
+            $scope.join = function(room){
+                Room.join({name: room.name, password: this.password}).then(function(response){
+                    var roomId = response.data.roomId;
+                    $state.go('rooms.detail', {roomId: roomId});
+                }, function(){
+                    toastr.error('Incorrect Password.');
+                });
+            };
+
             socket.on('bGlobalChat', function(message){
                 $('#messages').append('<div class="chat" ><img class="chat-avatar", src="'+ message.avatar +'"/>' + message.body + '</div><hr />');
                 $('#chat').focus();

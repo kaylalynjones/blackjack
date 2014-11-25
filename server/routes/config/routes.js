@@ -7,5 +7,6 @@ module.exports = [
   {method: 'delete', path: '/logout',           config: require('../definitions/users/delete_logout')},
   {method: 'get',    path: '/status',           config: require('../definitions/users/get_status')},
   {method: 'post',   path: '/room/create',      config: require('../definitions/rooms/create_room')},
-  {method: 'get',    path: '/room/index',       config: require('../definitions/rooms/get_rooms')}
+  {method: 'get',    path: '/room/index',       config: require('../definitions/rooms/get_rooms')},
+  {method: 'post',   path: '/rooms/{name}',     config: require('../definitions/rooms/post_rooms_join')}
 ];
