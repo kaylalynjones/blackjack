@@ -43,7 +43,9 @@
                 });
             };
 
-            socket.on('bGlobalChat', function(message){
+
+            socket.off('globalChat');
+            socket.on('globalChat', function(message){
                 $('#messages').append('<div class="chat" ><img class="chat-avatar", ng-src="'+ message.avatar +'"/>' + message.body + '</div><hr />');
                 $('#chat').focus();
             });

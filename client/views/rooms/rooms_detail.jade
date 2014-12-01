@@ -1,1 +1,12 @@
-h1 Room Detail Page
+h2 {{room.name}}
+img(ng-src='{{room.creator.avatar}}')
+
+.row
+    .small-8.columns
+        h3 Play a Game
+
+    .small-4.columns
+        h3 Room Chat
+        #messages.panel.callout.radius
+        input#message(type='text', ng-model='message', autofocus)
+        button.success.tiny.radius(ng-click='chat(message)') Send Message

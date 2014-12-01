@@ -16,6 +16,11 @@
                 return $http.post('/rooms/' + room.name, {password: room.password});
             }
 
-            return {create:create, showAll:showAll, join:join};
+            function find(roomId){
+                return $http.get('/rooms/' + roomId);
+            }
+
+
+            return {create:create, showAll:showAll, join:join, find:find};
         }]);
 })();
