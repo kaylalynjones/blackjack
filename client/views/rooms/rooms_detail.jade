@@ -1,5 +1,12 @@
-h2 {{room.name}}
-img(ng-src='{{room.creator.avatar}}')
+.row
+    .small-6.columns
+        h2 {{room.name}}
+    .small-6.columns
+        div.creator
+            h4 Room Creator
+            p {{room.creator.username}}
+            img.owner(ng-src='{{room.creator.avatar}}')
+
 
 .row
     .small-8.columns
